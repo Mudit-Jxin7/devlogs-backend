@@ -10,6 +10,10 @@ app.use("/logs", logsRouter);
 app.use(express.static("public"));
 app.use(cors());
 
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
 const PORT = process.env.PORT || 5000;
 
 mongoose
